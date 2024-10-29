@@ -11,7 +11,7 @@ function send_email($to, $subject, $message) {
     try {
         // Server settings
         $mail->isSMTP();                                            // Send using SMTP
-        $mail->Host       = 'mail.nathyy.com';                      // Set the SMTP server to send through
+        $mail->Host       = 'blood.nathyy.com';                      // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
         $mail->Username   = 'verify@blood.nathyy.com';               // SMTP username
         $mail->Password   = 'verify@nathyy.com';                        // SMTP password
