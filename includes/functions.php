@@ -11,12 +11,12 @@ function send_email($to, $subject, $message) {
     try {
         // Server settings
         $mail->isSMTP();                                            // Send using SMTP
-        $mail->Host       = 'mail.blood.nathyy.com';                      // Set the SMTP server to send through
+        $mail->Host       = 'blood.nathyy.com';                      // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
         $mail->Username   = 'blood@blood.nathyy.com';               // SMTP username
         $mail->Password   = 'j$IUWy}6$NG$';                        // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;           // Enable TLS encryption
-        $mail->Port       = 587;                                    // TCP port to connect to
+        $mail->Port       = 465;                                    // TCP port to connect to
 
         // Recipients
         $mail->setFrom('blood@blood.nathyy.com', 'Blood Donation System');
