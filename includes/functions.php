@@ -19,7 +19,7 @@ function send_email($to, $subject, $message) {
         $mail->Port       = 465;                                    // TCP port to connect to
 
         // Recipients
-        $mail->setFrom('nataman0911@gmail.com', 'Blood Donation System');
+        $mail->setFrom('verify@blood.nathyy.com', 'Blood Donation System');
         $mail->addAddress($to);
 
         // Content
@@ -38,7 +38,7 @@ function send_email($to, $subject, $message) {
 
 // Function to send email verification
 function send_verification_email($email, $token) {
-    $verification_link = "http://localhost/blood-donation-system/verification/verify.php?token=" . $token;
+    $verification_link = "verification/verify.php?token=" . $token;
     $subject = "Email Verification";
     $message = "Please verify your email by clicking the following link: <a href=\"$verification_link\">$verification_link</a>";
 
