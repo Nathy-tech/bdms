@@ -38,22 +38,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
             try {
                 //Server settings
                 $mail->isSMTP();
-                $mail->Host = 'smtp.gmail.com'; // Set the SMTP server to send through
+                $mail->Host = 'blood.nathyy.com'; // Set the SMTP server to send through
                 $mail->SMTPAuth = true;
-                $mail->Username = 'youremail@gmail.com'; // Your Gmail address
-                $mail->Password = 'yourpassword'; // Your Gmail password (or app password)
+                $mail->Username = 'blood@blood.nathyy.com'; // Your Gmail address
+                $mail->Password = 'j$IUWy}6$NG$'; // Your Gmail password (or app password)
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port = 587;
+                $mail->Port = 465;
 
                 // Recipients
-                $mail->setFrom('youremail@gmail.com', 'Blood Donation System');
+                $mail->setFrom('blood@blood.nathyy.com', 'Blood Donation System');
                 $mail->addAddress($email);
 
                 // Content
                 $mail->isHTML(true);
                 $mail->Subject = 'Password Reset Request';
                 $mail->Body = "To reset your password, please click the link below:<br><br>";
-                $mail->Body .= "<a href='http://yourdomain.com/pages/reset_password.php?token=$token'>Reset Password</a>";
+                $mail->Body .= "<a href='http://blood.nathy.com/pages/reset_password.php?token=$token'>Reset Password</a>";
 
                 $mail->send();
                 echo "A password reset link has been sent to your email address.";
