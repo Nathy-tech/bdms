@@ -36,7 +36,7 @@ include '../../includes/header.php';
             padding: 0;
             background-color: #f4f4f9;
         }
-        
+
         /* Navbar Styles */
         .navbar {
             display: flex;
@@ -51,14 +51,17 @@ include '../../includes/header.php';
             left: 0;
             z-index: 1000;
         }
+
         .navbar h1 {
             margin: 0;
             font-size: 24px;
         }
+
         .navbar nav {
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
+
         .navbar nav a {
             color: #fff;
             text-decoration: none;
@@ -68,6 +71,7 @@ include '../../includes/header.php';
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
+
         .navbar nav a:hover {
             background-color: #0056b3;
         }
@@ -80,60 +84,7 @@ include '../../includes/header.php';
             color: #fff;
         }
 
-        /* Profile & Content Styles */
-        .profile-container {
-            margin-top: 80px; /* Adjust for fixed navbar */
-            max-width: 1200px;
-            margin: 80px auto 20px;
-            padding: 20px;
-        }
-        .dashboard-header, .profile {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-        }
-        .profile img {
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            margin-right: 20px;
-            border: 2px solid #007bff;
-        }
-        .profile-info {
-            color: #333;
-        }
-        .profile-info h2 {
-            margin: 0 0 10px;
-            font-size: 24px;
-            color: #007bff;
-        }
-        .profile-info p {
-            margin: 5px 0;
-            font-size: 16px;
-        }
-        .logout {
-            display: block;
-            background-color: #dc3545;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            max-width: 200px;
-        }
-        .logout:hover {
-            background-color: #c82333;
-        }
-
-        /* Responsive Design */
+        /* Mobile Navigation */
         @media screen and (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -160,41 +111,16 @@ include '../../includes/header.php';
                 display: block;
                 padding: 10px;
             }
-
-            .dashboard-header, .profile {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile img {
-                margin-bottom: 10px;
-            }
         }
     </style>
-
-    <!-- Google Translate Widget -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'am,tig,en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </head>
 <body>
-
-    <!-- Google Translate Widget -->
-    <div id="google_translate_element" class="google-translate"></div>
 
     <!-- Navigation Bar -->
     <div class="navbar">
         <h1>Admin Dashboard</h1>
-        <div class="menu-toggle">&#9776;</div>
-        <nav>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+        <nav id="navMenu">
             <a href="create_account.php">Create Account</a>
             <a href="edit_account.php">Edit Account</a>
             <a href="manage_account.php">Manage Account</a>
@@ -207,36 +133,14 @@ include '../../includes/header.php';
         </nav>
     </div>
 
-    <!-- Profile Information -->
-    <div class="profile-container">
-        <div class="profile">
-            <?php if ($profile_picture): ?>
-                <img src="../../uploads/profile_pictures/<?php echo htmlspecialchars($profile_picture); ?>" alt="Profile Picture">
-            <?php else: ?>
-                <img src="../../uploads/profile_pictures/default.png" alt="Default Profile Picture">
-            <?php endif; ?>
-            <div class="profile-info">
-                <h2><?php echo htmlspecialchars($name); ?></h2>
-                <p>Email: <?php echo htmlspecialchars($email); ?></p>
-                <a href="../logout.php" class="logout">Logout</a>
-            </div>
-        </div>
-    </div>
-
     <!-- JavaScript for Menu Toggle -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector(".menu-toggle");
-            const nav = document.querySelector(".navbar nav");
-
-            if (!menuToggle || !nav) {
-                console.error("Menu toggle or navbar not found!");
-                return;
-            }
+            const menuToggle = document.getElementById("menuToggle");
+            const navMenu = document.getElementById("navMenu");
 
             menuToggle.addEventListener("click", function () {
-                console.log("Menu toggled!"); // Debugging
-                nav.classList.toggle("active");
+                navMenu.classList.toggle("active");
             });
         });
     </script>
