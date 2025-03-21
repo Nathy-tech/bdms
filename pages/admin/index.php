@@ -200,6 +200,7 @@ include '../../includes/header.php';
     <!-- Navigation Bar -->
     <div class="navbar">
         <h1>Admin Dashboard</h1>
+        <span class="menu-toggle">&#9776;</span>
         <nav>
             <a href="create_account.php">Create Account</a>
             <a href="edit_account.php">Edit Account</a>
