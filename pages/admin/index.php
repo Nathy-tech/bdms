@@ -239,5 +239,6 @@ include '../../includes/header.php';
             </div>
         </div>
     </div>
+    <script src="../../js/scripts.js"></script>
 </body>
 </html>
