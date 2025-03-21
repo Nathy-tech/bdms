@@ -56,7 +56,7 @@ include '../../includes/header.php';
         }
         .navbar nav {
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
         .navbar nav a {
             color: #fff;
@@ -71,32 +71,24 @@ include '../../includes/header.php';
             background-color: #0056b3;
         }
         .profile-container {
-            margin-top: 80px; /* Adjust for fixed navbar */
+            margin-top: 80px;
             max-width: 1200px;
             margin: 80px auto 20px;
             padding: 20px;
         }
-        .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .dashboard-header, .profile {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-        .dashboard-header h1 {
-            margin: 0;
+        .dashboard-header h1, .profile-info h2 {
             color: #007bff;
         }
         .profile {
             display: flex;
             align-items: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .profile img {
             border-radius: 50%;
@@ -107,15 +99,6 @@ include '../../includes/header.php';
         }
         .profile-info {
             color: #333;
-        }
-        .profile-info h2 {
-            margin: 0 0 10px;
-            font-size: 24px;
-            color: #007bff;
-        }
-        .profile-info p {
-            margin: 5px 0;
-            font-size: 16px;
         }
         .logout {
             display: block;
@@ -139,12 +122,6 @@ include '../../includes/header.php';
             cursor: pointer;
             color: #fff;
         }
-        .google-translate {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
         @media screen and (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -167,11 +144,26 @@ include '../../includes/header.php';
                 display: block;
                 padding: 10px;
             }
+            .dashboard-header, .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile img {
+                margin: 0 auto 10px;
+            }
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const nav = document.querySelector(".navbar nav");
+            menuToggle.addEventListener("click", function () {
+                nav.classList.toggle("active");
+            });
+        });
+    </script>
 </head>
 <body>
-    <div id="google_translate_element" class="google-translate"></div>
     <div class="navbar">
         <h1>Admin Dashboard</h1>
         <div class="menu-toggle">&#9776;</div>
@@ -189,7 +181,11 @@ include '../../includes/header.php';
     </div>
     <div class="profile-container">
         <div class="profile">
-            <img src="../../uploads/profile_pictures/default.png" alt="Default Profile Picture">
+            <?php if ($profile_picture): ?>
+                <img src="../../uploads/profile_pictures/<?php echo htmlspecialchars($profile_picture); ?>" alt="Profile Picture">
+            <?php else: ?>
+                <img src="../../uploads/profile_pictures/default.png" alt="Default Profile Picture">
+            <?php endif; ?>
             <div class="profile-info">
                 <h2><?php echo htmlspecialchars($name); ?></h2>
                 <p>Email: <?php echo htmlspecialchars($email); ?></p>
@@ -197,14 +193,5 @@ include '../../includes/header.php';
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector(".menu-toggle");
-            const nav = document.querySelector(".navbar nav");
-            menuToggle.addEventListener("click", function () {
-                nav.classList.toggle("active");
-            });
-        });
-    </script>
 </body>
 </html>
