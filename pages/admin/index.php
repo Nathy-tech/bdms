@@ -130,6 +130,13 @@ include '../../includes/header.php';
             max-width: 200px;
             margin: auto;
         }
+        /* Mobile Menu */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
         .logout:hover {
             background-color: #c82333;
         }
