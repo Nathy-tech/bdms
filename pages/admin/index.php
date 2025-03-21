@@ -30,34 +30,7 @@ include '../../includes/header.php';
     <link rel="stylesheet" href="../../css/styles.css">
     <style>
 
-        /* Responsive Design */
-@media (max-width: 768px) {
-    .info-cards, .heroes-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero h1 {
-        font-size: 2em;
-    }
-
-    .hero p {
-        font-size: 1.2em;
-    }
-
-    .hero {
-        height: 80vh;
-    }
-
-    .info-card, .hero-card {
-        width: 100%;
-    }
-
-    .hero .stats {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -167,6 +140,47 @@ include '../../includes/header.php';
             right: 20px;
             z-index: 1000;
         }
+        /* Responsive Design */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #007bff;
+        padding: 10px 0;
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .navbar nav a {
+        text-align: center;
+        display: block;
+        padding: 10px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile img {
+        margin-bottom: 10px;
+    }
+}
     </style>
      <!-- Google Translate Widget Script -->
      <script type="text/javascript">
