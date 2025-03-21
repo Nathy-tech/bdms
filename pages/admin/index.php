@@ -29,6 +29,35 @@ include '../../includes/header.php';
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../../css/styles.css">
     <style>
+
+        /* Responsive Design */
+@media (max-width: 768px) {
+    .info-cards, .heroes-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .hero {
+        height: 80vh;
+    }
+
+    .info-card, .hero-card {
+        width: 100%;
+    }
+
+    .hero .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+}
         body {
             font-family: Arial, sans-serif;
             margin: 0;
