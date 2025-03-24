@@ -115,6 +115,7 @@ include '../../includes/header.php';
         .logout:hover {
             background-color: #c82333;
         }
+        /* Menu toggle styles */
         .menu-toggle {
             display: none; /* Hidden by default */
             font-size: 30px;
@@ -165,19 +166,30 @@ include '../../includes/header.php';
         }
     </style>
     <script>
+        // JavaScript to toggle the menu visibility
         document.addEventListener("DOMContentLoaded", function () {
             const menuToggle = document.querySelector(".menu-toggle");
             const nav = document.querySelector(".navbar nav");
-            menuToggle.addEventListener("click", function () {
-                nav.classList.toggle("active"); /* Toggle the active class to show/hide menu */
-            });
+
+            // Check if the menu-toggle button exists
+            if (menuToggle) {
+                console.log("Hamburger menu button found!"); // Debug log
+
+                menuToggle.addEventListener("click", function () {
+                    nav.classList.toggle("active"); // Toggle the 'active' class
+                    console.log("Menu toggled!"); // Debug log
+                });
+            } else {
+                console.log("Hamburger menu button not found!"); // Debug log if not found
+            }
         });
     </script>
 </head>
 <body>
     <div class="navbar">
         <h1>Admin Dashboard</h1>
-        <div class="menu-toggle">&#9776;</div> <!-- This is the hamburger icon -->
+        <!-- Hamburger menu (should be visible on mobile) -->
+        <div class="menu-toggle">&#9776;</div>
         <nav>
             <a href="create_account.php">Create Account</a>
             <a href="edit_account.php">Edit Account</a>
