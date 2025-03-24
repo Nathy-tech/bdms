@@ -26,7 +26,7 @@ include '../../includes/header.php';
 <head>
 <script src="../../js/scripts.js"></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../../css/styles.css">
     <script src="../../js/scripts.js"></script>
