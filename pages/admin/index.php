@@ -116,16 +116,17 @@ include '../../includes/header.php';
             background-color: #c82333;
         }
         .menu-toggle {
-            display: none;
-            font-size: 24px;
+            display: none; /* Hidden by default */
+            font-size: 30px;
             cursor: pointer;
             color: #fff;
         }
 
         @media screen and (max-width: 768px) {
             .menu-toggle {
-                display: block;
+                display: block; /* Show the hamburger menu on mobile */
             }
+
             .navbar nav {
                 display: none;
                 flex-direction: column;
@@ -135,24 +136,29 @@ include '../../includes/header.php';
                 width: 100%;
                 background-color: #007bff;
                 padding: 10px 0;
-                z-index: 999; /* Ensure the menu is above other elements */
+                z-index: 999;
             }
+
             .navbar nav.active {
-                display: flex;
+                display: flex; /* Show menu when active */
             }
+
             .navbar nav a {
                 text-align: center;
                 display: block;
                 padding: 10px;
+                width: 100%;
             }
+
             .profile-container {
-                margin-top: 120px; /* Adjust this so it doesn’t overlap with navbar */
-                padding: 10px;
+                margin-top: 120px; /* Adjust the profile container to prevent overlap with navbar */
             }
+
             .dashboard-header, .profile {
                 flex-direction: column;
                 text-align: center;
             }
+
             .profile img {
                 margin: 0 auto 10px;
             }
@@ -163,7 +169,7 @@ include '../../includes/header.php';
             const menuToggle = document.querySelector(".menu-toggle");
             const nav = document.querySelector(".navbar nav");
             menuToggle.addEventListener("click", function () {
-                nav.classList.toggle("active");
+                nav.classList.toggle("active"); /* Toggle the active class to show/hide menu */
             });
         });
     </script>
@@ -171,7 +177,7 @@ include '../../includes/header.php';
 <body>
     <div class="navbar">
         <h1>Admin Dashboard</h1>
-        <div class="menu-toggle">&#9776;</div>
+        <div class="menu-toggle">&#9776;</div> <!-- This is the hamburger icon -->
         <nav>
             <a href="create_account.php">Create Account</a>
             <a href="edit_account.php">Edit Account</a>
