@@ -135,6 +135,7 @@ include '../../includes/header.php';
                 width: 100%;
                 background-color: #007bff;
                 padding: 10px 0;
+                z-index: 999; /* Ensure the menu is above other elements */
             }
             .navbar nav.active {
                 display: flex;
