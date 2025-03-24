@@ -20,11 +20,10 @@ $stmt->close();
 
 include '../../includes/header.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="../../js/scripts.js"></script>
+    <script src="../../js/scripts.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin Dashboard</title>
@@ -122,6 +121,7 @@ include '../../includes/header.php';
             cursor: pointer;
             color: #fff;
         }
+
         @media screen and (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -142,6 +142,10 @@ include '../../includes/header.php';
             .navbar nav a {
                 text-align: center;
                 display: block;
+                padding: 10px;
+            }
+            .profile-container {
+                margin-top: 120px; /* Adjust this so it doesn’t overlap with navbar */
                 padding: 10px;
             }
             .dashboard-header, .profile {
